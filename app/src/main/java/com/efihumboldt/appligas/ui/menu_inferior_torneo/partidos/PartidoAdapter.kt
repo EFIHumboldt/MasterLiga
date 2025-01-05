@@ -32,9 +32,12 @@ class PartidoAdapter(private val listaPartido: List<Partido>, private val bd: St
     override fun onBindViewHolder(holder: PartidoViewHolder, position: Int) {
         val posicion = listaPartido[position]
 
-        Glide.with(holder.imgLocal.context).load("${bd}/${posicion.imgLocal}").into(holder.imgLocal)
-        Glide.with(holder.imgVisita.context).load("${bd}/${posicion.imgVisita}")
-            .into(holder.imgVisita)
+        Glide.with(holder.imgLocal.context).load(R.drawable.escudo_default).into(holder.imgLocal)
+        Glide.with(holder.imgVisita.context).load(R.drawable.escudo_default).into(holder.imgVisita)
+
+        //Cambiar despues
+        //Glide.with(holder.imgLocal.context).load("${bd}/${posicion.imgLocal}").into(holder.imgLocal)
+        //Glide.with(holder.imgVisita.context).load("${bd}/${posicion.imgVisita}").into(holder.imgVisita)
 
         holder.nombreLocal.text = posicion.nombreLocal
         holder.nombreVisita.text = posicion.nombreVisita

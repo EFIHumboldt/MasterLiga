@@ -10,6 +10,7 @@ interface ApiService {
     val noticiaApiService : NoticiaApiService
     val fechaDeportivaApiService: FechaDeportivaApiService
     val cruceApiService: CruceApiService
+    val jugadorApiService : JugadorApiService
     val bannerApiService: BannerApiService
 
 }

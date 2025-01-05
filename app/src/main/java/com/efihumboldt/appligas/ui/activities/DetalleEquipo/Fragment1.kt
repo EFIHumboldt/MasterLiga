@@ -23,15 +23,18 @@ import com.efihumboldt.appligas.entidades.Posicion
 import com.efihumboldt.appligas.implementaciones.ApiServiceImpl
 import com.efihumboldt.appligas.implementaciones.BannerDAOImpl
 import com.efihumboldt.appligas.implementaciones.EquipoSimpleDAOImpl
+import com.efihumboldt.appligas.implementaciones.JugadorDAOImpl
 import com.efihumboldt.appligas.implementaciones.PartidoDAOImpl
 import com.efihumboldt.appligas.implementaciones.PosicionDAOImpl
 import com.efihumboldt.appligas.interfaces.ApiService
 import com.efihumboldt.appligas.interfaces.BannerDAO
 import com.efihumboldt.appligas.interfaces.EquipoSimpleDAO
+import com.efihumboldt.appligas.interfaces.JugadorDAO
 import com.efihumboldt.appligas.interfaces.PartidoDAO
 import com.efihumboldt.appligas.interfaces.PosicionDAO
 import com.efihumboldt.appligas.services.BannerService
 import com.efihumboldt.appligas.services.EquipoSimpleService
+import com.efihumboldt.appligas.services.JugadorService
 import com.efihumboldt.appligas.services.PartidoService
 import com.efihumboldt.appligas.services.PosicionService
 import com.efihumboldt.appligas.ui.activities.DetallePartido.DetallePartidoActivity
@@ -55,6 +58,7 @@ class Fragment1 : Fragment() {
     private lateinit var recyclerViewTablaDetalleEquipo: RecyclerView
     private lateinit var headerLayout: View
     private lateinit var recyclerViewLastMatchs: RecyclerView
+    private lateinit var recyclerViewPlantel : RecyclerView
     private lateinit var swipeRefreshLayoutActivityEquipo: SwipeRefreshLayout
     private lateinit var customToolbar: View
     private lateinit var binding: Fragment1Binding
@@ -81,6 +85,7 @@ class Fragment1 : Fragment() {
         // Inicializar vistas
         recyclerViewTablaDetalleEquipo = binding.frameTablaPosiciones.recyclerViewTablaDetalleEquipo
         recyclerViewLastMatchs = binding.frameUltimosPartidos.recyclerViewUltimosPartidos
+        recyclerViewPlantel = binding.framePlantel.recyclerViewTablaDetalleEquipo
         swipeRefreshLayoutActivityEquipo = binding.swipeRefreshLayoutActivityEquipo
 
         val bd = viewModel.bd
@@ -95,6 +100,9 @@ class Fragment1 : Fragment() {
         val posicionDAO: PosicionDAO = PosicionDAOImpl(apiService.posicionApiService, bd, torneoSeleccionado!!.divisionID, requireContext())
         val posicionService = PosicionService(posicionDAO)
 
+        val jugadorDAO : JugadorDAO = JugadorDAOImpl(apiService.jugadorApiService, bd, requireContext())
+        val jugadorService = JugadorService(jugadorDAO)
+
         val team = viewModel.selectedTeam
 
         if (team != null) {
@@ -104,11 +112,13 @@ class Fragment1 : Fragment() {
                 binding.frameStatsEquipo.progressBar.visibility = View.VISIBLE
                 binding.frameTablaPosiciones.progressBar.visibility = View.VISIBLE
                 binding.frameUltimosPartidos.progressBar.visibility = View.VISIBLE
+                binding.framePlantel.progressBar.visibility = View.VISIBLE
 
                 cargarBanner(bd)
                 cargarDatosTabla(posicionService, team.id, team.zona, 0)
                 cargarDatosLastMatchs(partidoService, team.id)
                 cargarDatosStats(partidoService, team.id)
+                cargarDatosPlantel(jugadorService, team.id)
             }
         }
 
@@ -175,6 +185,22 @@ class Fragment1 : Fragment() {
         return result
     }
 
+    private suspend fun cargarDatosPlantel(jugadorService: JugadorService, id: Int) {
+        try {
+            val listaJugadores = jugadorService.getJugadoresByTeamID(id)
+            withContext(Dispatchers.Main) {
+                val jugadoresAdapter = PlantelAdapter(listaJugadores, SharedDataHolder.bd, id, requireContext())
+                val layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+                recyclerViewPlantel.layoutManager = layoutManager
+                recyclerViewPlantel.adapter = jugadoresAdapter
+
+                binding.framePlantel.progressBar.visibility = View.GONE
+                swipeRefreshLayoutActivityEquipo.isRefreshing = false
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+    }
     private suspend fun cargarDatosTabla(posicionService: PosicionService, id: Int, zonaDeseada: String, delay: Long) {
         delay(delay)
         try {

@@ -9,6 +9,7 @@ import com.efihumboldt.appligas.interfaces.BannerApiService
 import com.efihumboldt.appligas.interfaces.CruceApiService
 import com.efihumboldt.appligas.interfaces.EquipoSimpleApiService
 import com.efihumboldt.appligas.interfaces.FechaDeportivaApiService
+import com.efihumboldt.appligas.interfaces.JugadorApiService
 import com.efihumboldt.appligas.interfaces.NoticiaApiService
 import com.efihumboldt.appligas.interfaces.PartidoApiService
 import com.efihumboldt.appligas.interfaces.PosicionApiService
@@ -54,6 +55,10 @@ class ApiServiceImpl(context: Context, bd: String?) : ApiService {
 
     override val cruceApiService : CruceApiService by lazy {
         createService(CruceApiService::class.java)
+    }
+
+    override val jugadorApiService : JugadorApiService by lazy {
+        createService(JugadorApiService::class.java)
     }
 
     override val bannerApiService : BannerApiService by lazy {

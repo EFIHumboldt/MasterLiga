@@ -48,7 +48,10 @@ private val context: Context,
         holder.tvDiferenciaGoles.text = posicion.diferenciaDeGoles.toString()
         holder.tvPuntos.text = posicion.puntos.toString()
 
-        Glide.with(holder.escudoEquipo.context).load("${bd}/${posicion.escudo}").into(holder.escudoEquipo)
+        //CAMBIAR DESPUES
+        //Glide.with(holder.escudoEquipo.context).load("${bd}/${posicion.escudo}").into(holder.escudoEquipo)
+        Glide.with(holder.escudoEquipo.context).load(R.drawable.escudo_default).into(holder.escudoEquipo)
+
         holder.barraPocision.setImageResource(R.drawable.position_bar)
 
         if (posicion.colorBarra != "NULL") {

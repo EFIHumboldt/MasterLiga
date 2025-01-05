@@ -133,6 +133,17 @@
             android:gravity="center"
             />
 
+        <ImageView
+            android:id="@+id/button_youtube"
+            android:layout_width="20sp"
+            android:layout_height="20sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_margin="10sp"
+            android:src="@drawable/youtube_logo">
+
+        </ImageView>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

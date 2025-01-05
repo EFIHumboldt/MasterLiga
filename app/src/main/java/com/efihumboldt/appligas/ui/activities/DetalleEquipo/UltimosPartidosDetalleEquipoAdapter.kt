@@ -47,14 +47,19 @@ class UltimosPartidosDetalleEquipoAdapter(private val listaPartidos: List<Partid
 
         if (teamID.toString() == posicion.idLocal )
         {
-            Glide.with(holder.imgRival.context).load("${bd}/${posicion.imgVisita}").into(holder.imgRival)
+            Glide.with(holder.imgRival.context).load(R.drawable.escudo_default).into(holder.imgRival)
+
+            //CAMBIAR DESPUES
+            //Glide.with(holder.imgRival.context).load("${bd}/${posicion.imgVisita}").into(holder.imgRival)
             if (posicion.resultadoLocal!! > posicion.resultadoVisita!!) holder.barraResultado.setBackgroundResource(R.color.colorGanado)
             else if (posicion.resultadoLocal < posicion.resultadoVisita.toString()) holder.barraResultado.setBackgroundResource(R.color.colorPerdido)
             else holder.barraResultado.setBackgroundResource(R.color.colorEmpatado)
         }
         else
         {
-            Glide.with(holder.imgRival.context).load("${bd}/${posicion.imgLocal}").into(holder.imgRival)
+            Glide.with(holder.imgRival.context).load(R.drawable.escudo_default).into(holder.imgRival)
+            //CAMBIAR DESPUES
+            //Glide.with(holder.imgRival.context).load("${bd}/${posicion.imgLocal}").into(holder.imgRival)
             if (posicion.resultadoVisita!! > posicion.resultadoLocal.toString()) holder.barraResultado.setBackgroundResource(R.color.colorGanado)
             else if (posicion.resultadoVisita < posicion.resultadoLocal.toString()) holder.barraResultado.setBackgroundResource(R.color.colorPerdido)
             else holder.barraResultado.setBackgroundResource(R.color.colorEmpatado)
