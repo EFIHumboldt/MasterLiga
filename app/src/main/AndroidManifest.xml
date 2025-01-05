@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/ico"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppLigas"
+        tools:targetApi="31"
+        android:usesCleartextTraffic="true"
+        >
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.efihumboldt.appligas.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity
+            android:name=".ui.activities.DetalleTorneo.DetalleTorneoActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            >
+
+        </activity>
+
+        <activity
+            android:name=".ui.activities.Favoritos.FavoritosActivity"
+            android:exported="true"
+            android:label="@string/app_name_mayus"
+            android:screenOrientation="portrait"
+            >
+
+        </activity>
+
+        <activity
+            android:name=".ui.activities.DetalleEquipo.DetalleEquipoActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name=".ui.activities.Contactos.ClasificationTableActivity"
+            android:exported="true"
+            android:label="Tabla de clasificación"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name=".ui.activities.Contactos.ContactosActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
+        </activity>
+
+
+        <activity
+            android:name=".ui.activities.DetallePartido.DetallePartidoActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name=".ui.activities.DaetallesNoticia.DetalleNoticiaActivity"
+            android:exported="true"
+            android:label="@string/app_name_mayus"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name=".ui.activities.AnimMainActivity"
+            android:exported="true"
+            android:label="@string/app_name_mayus"
+            android:screenOrientation="portrait">
+
+        </activity>
+
+        <activity
+            android:name=".Varios.SplashActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+        <activity
+            android:name=".ui.activities.Torneos.TorneoActivity"
+            android:exported="true"
+            android:label="@string/app_name_mayus"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name=".ui.activities.Ligas.LigaActivity"
+            android:exported="true"
+            android:label="@string/app_name_mayus"
+            android:screenOrientation="portrait">
+        </activity>
+
+    </application>
+
+</manifest>

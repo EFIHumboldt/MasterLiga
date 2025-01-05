@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="verdeMatch">#00AA00</color>
+    <color name="colorNoSeleccionado">#909090</color>
+    <color name="colorCabecera">#202020</color>
+    <color name="barraPosicion">#454545</color>
+    <color name="fondoCardFechas">#202020</color>
+    <color name="spinnerItem">#DDDDDD</color>
+    <color name="posicionSeleccionada">#606060</color>
+    <color name="logos">#FFFFFF</color>
+    <color name="lupa">#D6D6D6</color>
+
+</resources>

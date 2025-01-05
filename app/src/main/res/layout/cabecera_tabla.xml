@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card"
+    android:layout_width="wrap_content"
+    android:layout_height="35sp"
+    android:padding="0dp"
+    android:background="@drawable/background_cabecera_posiciones"
+    >
+
+
+    <TextView
+        android:id="@+id/posicion"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:layout_marginLeft="10dp"
+        android:textAlignment="center"
+        android:text="#"
+        android:fontFamily="@font/montserrat_bold"
+        style="@style/TextViewPosicionTamanioLimitadov26"
+        android:textColor="@color/white">
+    </TextView>
+
+    <TextView
+        android:id="@+id/item_partidos_jugados"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:layout_toStartOf="@id/item_partidos_ganados"
+        android:text="J"
+        android:textAlignment="center"
+        android:fontFamily="@font/montserrat_regular"
+        style="@style/TextViewPosicionTamanioLimitadov26"
+        android:textColor="@color/white"
+        />
+
+    <TextView
+        android:id="@+id/item_partidos_ganados"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:layout_toStartOf="@id/item_partidos_empatados"
+        android:text="G"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:fontFamily="@font/montserrat_regular"
+        style="@style/TextViewPosicionTamanioLimitadov26" />
+
+    <TextView
+        android:id="@+id/item_partidos_empatados"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:layout_toStartOf="@id/item_partidos_perdidos"
+        android:text="E"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:fontFamily="@font/montserrat_regular"
+        style="@style/TextViewPosicionTamanioLimitadov26" />
+
+
+    <TextView
+        android:id="@+id/item_partidos_perdidos"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:layout_toStartOf="@id/item_goles_favor"
+        android:text="P"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:fontFamily="@font/montserrat_regular"
+        style="@style/TextViewPosicionTamanioLimitadov26" />
+
+    <TextView
+        android:id="@+id/item_goles_favor"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:layout_toStartOf="@id/item_goles_contra"
+        android:text="GF"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:fontFamily="@font/montserrat_regular"
+        style="@style/TextViewPosicionTamanioLimitadov26" />
+
+    <TextView
+        android:id="@+id/item_goles_contra"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:layout_toStartOf="@id/item_diferencia_goles"
+        android:text="GC"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:fontFamily="@font/montserrat_regular"
+        style="@style/TextViewPosicionTamanioLimitadov26" />
+
+    <TextView
+        android:id="@+id/item_diferencia_goles"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:layout_toStartOf="@id/item_puntos"
+        android:text="+/-"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:fontFamily="@font/montserrat_regular"
+        style="@style/TextViewPosicionTamanioLimitadov26" />
+
+    <TextView
+        android:id="@+id/item_puntos"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="5dp"
+        android:text="PTS"
+        android:textColor="@color/white"
+        android:fontFamily="@font/montserrat_regular"
+        style="@style/TextViewPosicionTamanioLimitadov26" />
+
+    />
+</RelativeLayout>

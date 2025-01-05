@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    xmlns:card_view = "http://schemas.android.com/apk/res-auto"
+
+    android:id="@+id/card_view_equipos"
+    android:layout_margin="0dp"
+    card_view:cardCornerRadius="0dp"
+    card_view:contentPadding="0dp">
+
+    <RelativeLayout
+        android:id="@+id/card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="0dp">
+
+        <ImageView
+            android:id="@+id/barraPosicion"
+            android:layout_width="4sp"
+            android:layout_height="45sp"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="10dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            />
+
+        <TextView
+            android:id="@+id/descripcion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:text="1"
+            android:fontFamily="@font/montserrat_regular"
+            style="@style/TamanioLimitadov26">
+        </TextView>
+
+
+        />
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

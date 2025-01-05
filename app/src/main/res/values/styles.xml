@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:actionBarStyle">@style/ActionBar</item>
+    </style>
+
+    <style name="ActionBar" parent="@android:style/Widget.Holo.ActionBar">
+    <!-- Otros atributos de ActionBar aquí -->
+    <item name="android:titleTextStyle">@style/ActionBarTitle</item>
+    </style>
+
+    <style name="TitilliumRegular" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:fontFamily">@font/titillium_web_regular</item>
+    </style>
+
+    <style name="TitilliumBold" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:fontFamily">@font/titillium_web_bold</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="ActionBarTitle" parent="@android:style/TextAppearance">
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:textSize">1sp</item>
+    </style>
+
+    <style name="MontserratRegular" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="MontserratBold" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+    <style name="Custom" parent="Theme.AppCompat.Light.NoActionBar">
+
+    </style>
+
+    <style name="SpinnerItemSelected" parent="Widget.AppCompat.DropDownItem.Spinner">
+        <item name="android:textColor">#FF5733</item>
+    </style>
+
+</resources>

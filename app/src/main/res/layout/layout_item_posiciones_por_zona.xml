@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <!-- TextView para mostrar el nombre de la zona -->
+    <TextView
+        android:id="@+id/textViewZona"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Zona X"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/montserrat_bold"
+        style="@style/TamanioLimitadov26"/>
+
+    <include layout="@layout/cabecera_tabla"></include>
+
+    <!-- RecyclerView para mostrar las posiciones por zona -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewPosicionesPorZona"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:id="@+id/banner1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"></ImageView>
+
+</LinearLayout>

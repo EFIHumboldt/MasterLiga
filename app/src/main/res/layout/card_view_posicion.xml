@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    xmlns:card_view = "http://schemas.android.com/apk/res-auto"
+
+    android:id="@+id/card_view_equipos"
+    android:layout_margin="0dp"
+    card_view:cardCornerRadius="0dp"
+    card_view:contentPadding="0dp">
+
+    <RelativeLayout
+        android:id="@+id/card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="0dp">
+
+        <ImageView
+            android:id="@+id/barraPosicion"
+            android:layout_width="4dp"
+            android:layout_height="45dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="10dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            />
+
+        <TextView
+            android:id="@+id/posicion"
+            android:layout_width="15dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:fontFamily="@font/montserrat_bold"
+            style="@style/TextViewPosicionTamanioLimitadov26">
+        </TextView>
+
+        <ImageView
+            android:id="@+id/imgEquipo"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_toRightOf="@+id/posicion"
+            />
+
+        <TextView
+            android:id="@+id/item_nombre"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:ellipsize="marquee"
+            android:layout_width="wrap_content"
+
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:layout_marginEnd="10dp"
+            android:layout_toEndOf="@id/imgEquipo"
+            android:layout_toStartOf="@id/item_partidos_jugados"
+            android:fontFamily="@font/montserrat_regular"
+            style="@style/TextViewPosicionTamanioLimitadov26"
+            />
+
+        <TextView
+            android:id="@+id/item_partidos_jugados"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@id/item_partidos_ganados"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:fontFamily="@font/montserrat_regular"
+            style="@style/TextViewPosicionTamanioLimitadov26"
+            />
+
+        <TextView
+            android:id="@+id/item_partidos_ganados"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@id/item_partidos_empatados"
+            android:textAlignment="center"
+            android:fontFamily="@font/montserrat_regular"
+            style="@style/TextViewPosicionTamanioLimitadov26"/>
+
+        <TextView
+            android:id="@+id/item_partidos_empatados"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@id/item_partidos_perdidos"
+            android:textAlignment="center"
+            android:fontFamily="@font/montserrat_regular"
+            style="@style/TextViewPosicionTamanioLimitadov26"/>
+
+
+        <TextView
+            android:id="@+id/item_partidos_perdidos"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@id/item_goles_favor"
+            android:textAlignment="center"
+            android:fontFamily="@font/montserrat_regular"
+            style="@style/TextViewPosicionTamanioLimitadov26"/>
+
+        <TextView
+            android:id="@+id/item_goles_favor"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@id/item_goles_contra"
+            android:textAlignment="center"
+            android:fontFamily="@font/montserrat_regular"
+            style="@style/TextViewPosicionTamanioLimitadov26"/>
+
+        <TextView
+            android:id="@+id/item_goles_contra"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@id/item_diferencia_goles"
+            android:textAlignment="center"
+            android:fontFamily="@font/montserrat_regular"
+            style="@style/TextViewPosicionTamanioLimitadov26"/>
+
+        <TextView
+            android:id="@+id/item_diferencia_goles"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@id/item_puntos"
+            android:textAlignment="center"
+            android:fontFamily="@font/montserrat_regular"
+            style="@style/TextViewPosicionTamanioLimitadov26"/>
+
+        <TextView
+            android:id="@+id/item_puntos"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="5dp"
+            android:textAlignment="center"
+            android:fontFamily="@font/montserrat_bold"
+            style="@style/TextViewPosicionTamanioLimitadov26"/>
+
+        <TextView
+            android:id="@+id/idEquipoText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:visibility="invisible"
+            style="@style/TextViewPosicionTamanioLimitadov26"/>
+        />
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

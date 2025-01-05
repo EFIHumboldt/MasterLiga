@@ -1,0 +1,37 @@
+<resources>
+
+    <string name="color_app">#1789FC</string>
+    <string name="app_name">Inter-Ligas</string>
+    <string name="URL_base">https://vps-3888229-x.dattaweb.com </string>
+    <string name="URL_base_local">http://192.168.18.120 </string>
+    <string name="app_name_mayus">INTER-LIGAS</string>
+    <string name="title_posiciones">Posiciones</string>
+    <string name="title_partidos">Partidos</string>
+    <string name="title_noticias">Noticias</string>
+    <string name="title_cruces">Cruces</string>
+    <string name="title_equipos">Equipos</string>
+    <string name="titulo_fragment_equipos">Seleccione un equipo</string>
+    <string name="titulo_activity_liga">Seleccione una liga </string>
+    <string name="titulo_activity_torneo">Seleccione un torneo </string>
+    <string name="lorem_ipsum"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  </string>
+    <string name="lorem_ipsum_short"> Lorem ipsum dolor sit amet, consectetur adipiscing elit.  </string>
+
+    <string name="xml_example">
+    <![CDATA[
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" android:id="@+id/card" android:layout_width="wrap_content" android:layout_height="35sp" android:padding="0dp" android:background="@drawable/background_cabecera_posiciones">
+<TextView android:id="@+id/posicion" android:layout_width="10dp" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_marginLeft="10dp" android:textAlignment="center" android:text="#" style="@style/MontserratBold" android:textColor="@color/white"> </TextView>
+<TextView android:id="@+id/item_partidos_jugados" android:layout_width="@dimen/three_digits_width" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_toStartOf="@id/item_partidos_ganados" android:text="J" android:textAlignment="center" style="@style/MontserratRegular" android:textColor="@color/white"/>
+<TextView android:id="@+id/item_partidos_ganados" android:layout_width="@dimen/three_digits_width" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_toStartOf="@id/item_partidos_empatados" android:text="G" android:textAlignment="center" android:textColor="@color/white" style="@style/MontserratRegular"/>
+<TextView android:id="@+id/item_partidos_empatados" android:layout_width="@dimen/three_digits_width" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_toStartOf="@id/item_partidos_perdidos" android:text="E" android:textColor="@color/white" android:textAlignment="center" style="@style/MontserratRegular"/>
+<TextView android:id="@+id/item_partidos_perdidos" android:layout_width="@dimen/three_digits_width" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_toStartOf="@id/item_goles_favor" android:text="P" android:textColor="@color/white" android:textAlignment="center" style="@style/MontserratRegular"/>
+<TextView android:id="@+id/item_goles_favor" android:layout_width="@dimen/three_digits_width" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_toStartOf="@id/item_goles_contra" android:text="GF" android:textColor="@color/white" android:textAlignment="center" style="@style/MontserratRegular"/>
+<TextView android:id="@+id/item_goles_contra" android:layout_width="@dimen/three_digits_width" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_toStartOf="@id/item_diferencia_goles" android:text="GC" android:textColor="@color/white" android:textAlignment="center" style="@style/MontserratRegular"/>
+<TextView android:id="@+id/item_diferencia_goles" android:layout_width="@dimen/three_digits_width" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_toStartOf="@id/item_puntos" android:text="+/-" android:textColor="@color/white" android:textAlignment="center" style="@style/MontserratRegular"/>
+<TextView android:id="@+id/item_puntos" android:layout_width="@dimen/three_digits_width" android:layout_height="wrap_content" android:layout_alignParentEnd="true" android:layout_centerVertical="true" android:layout_marginEnd="5dp" android:text="PTS" android:textColor="@color/white" android:textAlignment="center" style="@style/MontserratBold"/>
+/>
+</RelativeLayout>
+
+    ]]>
+</string>
+
+</resources>

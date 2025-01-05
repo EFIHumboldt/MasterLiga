@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       >
+
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/carGolesRealizados"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="5dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="1dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp">
+
+                <TextView
+                    android:id="@+id/golesRealizadosTittle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Goles Realizados"
+                    android:textSize="16dp"
+                    style="@style/TamanioLimitadov26"
+                    android:fontFamily="@font/montserrat_bold"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                </TextView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardGolesLocal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/golesRealizadosTittle"
+                    app:layout_constraintEnd_toStartOf="@id/cardGolesVisita"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="2dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_margin="5dp"
+                    >
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="5dp"
+                        >
+
+                        <TextView
+                            android:id="@+id/golesLocalTittle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:text="Goles de local"
+                            style="@style/TamanioLimitadov26"
+                            android:gravity="center"
+                            android:fontFamily="@font/montserrat_regular" />
+
+                        <TextView
+                            android:id="@+id/cantGolesLocalTotal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            app:layout_constraintTop_toBottomOf="@id/golesLocalTittle"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:textSize="40dp"
+                            android:gravity="center"
+                            android:fontFamily="@font/montserrat_bold"/>
+
+                        <TextView
+                            android:id="@+id/golesLocalTotalTittle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="En Total"
+                            app:layout_constraintTop_toBottomOf="@id/cantGolesLocalTotal"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            style="@style/TamanioLimitadov26"
+                            android:gravity="center"
+                            android:fontFamily="@font/montserrat_regular"/>
+
+                        <TextView
+                            android:id="@+id/cantGolesLocalProm"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            app:layout_constraintTop_toBottomOf="@id/golesLocalTotalTittle"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:textSize="40dp"
+                            android:gravity="center"
+                            android:fontFamily="@font/montserrat_bold"/>
+
+                        <TextView
+                            android:id="@+id/GolesLocalPromTittle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Prom. por Part."
+                            app:layout_constraintTop_toBottomOf="@id/cantGolesLocalProm"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            style="@style/TamanioLimitadov26"
+                            android:gravity="center"
+                            android:fontFamily="@font/montserrat_regular"/>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardGolesVisita"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/golesRealizadosTittle"
+                    app:layout_constraintStart_toEndOf="@id/cardGolesLocal"
+                    android:layout_margin="5dp"
+                    android:layout_marginStart="5dp"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="2dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:id="@+id/golesVisitaTittle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:text="Goles de visita"
+                            style="@style/TamanioLimitadov26"
+                            android:gravity="center"
+                            android:fontFamily="@font/montserrat_regular" />
+
+                        <TextView
+                            android:id="@+id/cantGolesVisitaEnTotal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            app:layout_constraintTop_toBottomOf="@id/golesVisitaTittle"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:textSize="40dp"
+                            android:gravity="center"
+                            android:fontFamily="@font/montserrat_bold"/>
+
+                        <TextView
+                            android:id="@+id/golesVisitaEnTotalTittle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="En Total"
+                            app:layout_constraintTop_toBottomOf="@id/cantGolesVisitaEnTotal"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            style="@style/TamanioLimitadov26"
+                            android:gravity="center"
+                            android:fontFamily="@font/montserrat_regular"/>
+
+                        <TextView
+                            android:id="@+id/cantGolesVisitaProm"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            app:layout_constraintTop_toBottomOf="@id/golesVisitaEnTotalTittle"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:textSize="40dp"
+                            android:gravity="center"
+                            android:fontFamily="@font/montserrat_bold"/>
+
+                        <TextView
+                            android:id="@+id/GolesVisitaPromTittle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Prom. por Part."
+                            app:layout_constraintTop_toBottomOf="@id/cantGolesVisitaProm"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            style="@style/TamanioLimitadov26"
+                            android:gravity="center"
+                            android:fontFamily="@font/montserrat_regular"/>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardGolesConcebidos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/carGolesRealizados"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="5dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="50dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp">
+
+                <TextView
+                    android:id="@+id/golesConcebidosTittle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Goles Recibidos"
+                    android:textSize="16dp"
+                    style="@style/TamanioLimitadov26"
+                    android:fontFamily="@font/montserrat_bold"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                </TextView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardGolesConcebidosLocal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/golesConcebidosTittle"
+                    app:layout_constraintEnd_toStartOf="@id/cardGolesVisitaConcebidos"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="2dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_margin="5dp"
+                    >
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="5dp"
+                        >
+
+                        <TextView
+                            android:id="@+id/golesLocalConcebidosTittle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:text="Goles de local"
+                            style="@style/TamanioLimitadov26"
+                            android:gravity="center"
+                            android:fontFamily="@font/montserrat_regular" />
+
+                        <TextView
+                            android:id="@+id/cantGolesLocalConcebidosTotal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            app:layout_constraintTop_toBottomOf="@id/golesLocalConcebidosTittle"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:textSize="40dp"
+                            android:gravity="center"
+                            android:fontFamily="@font/montserrat_bold"/>
+
+                        <TextView
+                            android:id="@+id/golesLocalConcebidosTotalTittle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="En Total"
+                            app:layout_constraintTop_toBottomOf="@id/cantGolesLocalConcebidosTotal"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            style="@style/TamanioLimitadov26"
+                            android:gravity="center"
+                            android:fontFamily="@font/montserrat_regular"/>
+
+                        <TextView
+                            android:id="@+id/cantGolesLocalConcebidosProm"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            app:layout_constraintTop_toBottomOf="@id/golesLocalConcebidosTotalTittle"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:textSize="40dp"
+                            android:gravity="center"
+                            android:fontFamily="@font/montserrat_bold"/>
+
+                        <TextView
+                            android:id="@+id/GolesLocalConcebidosPromTittle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Prom. por Part."
+                            app:layout_constraintTop_toBottomOf="@id/cantGolesLocalConcebidosProm"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            style="@style/TamanioLimitadov26"
+                            android:gravity="center"
+                            android:fontFamily="@font/montserrat_regular"/>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardGolesVisitaConcebidos"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/golesConcebidosTittle"
+                    app:layout_constraintStart_toEndOf="@id/cardGolesConcebidosLocal"
+                    android:layout_margin="5dp"
+                    android:layout_marginStart="5dp"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="2dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:id="@+id/golesVisitaConcebidosTittle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:text="Goles de visita"
+                            style="@style/TamanioLimitadov26"
+                            android:gravity="center"
+                            android:fontFamily="@font/montserrat_regular" />
+
+                        <TextView
+                            android:id="@+id/cantGolesVisitaConcebidosEnTotal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            app:layout_constraintTop_toBottomOf="@id/golesVisitaConcebidosTittle"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:textSize="40dp"
+                            android:gravity="center"
+                            android:fontFamily="@font/montserrat_bold"/>
+
+                        <TextView
+                            android:id="@+id/golesVisitaConcebidosEnTotalTittle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="En Total"
+                            app:layout_constraintTop_toBottomOf="@id/cantGolesVisitaConcebidosEnTotal"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            style="@style/TamanioLimitadov26"
+                            android:gravity="center"
+                            android:fontFamily="@font/montserrat_regular"/>
+
+                        <TextView
+                            android:id="@+id/cantGolesVisitaConcebidosProm"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            app:layout_constraintTop_toBottomOf="@id/golesVisitaConcebidosEnTotalTittle"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:textSize="40dp"
+                            android:gravity="center"
+                            android:fontFamily="@font/montserrat_bold"/>
+
+                        <TextView
+                            android:id="@+id/GolesVisitaConcebidosPromTittle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Prom. por Part."
+                            app:layout_constraintTop_toBottomOf="@id/cantGolesVisitaConcebidosProm"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            style="@style/TamanioLimitadov26"
+                            android:gravity="center"
+                            android:fontFamily="@font/montserrat_regular"/>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="16dp"
+            app:layout_constraintTop_toBottomOf="@id/cardGolesConcebidos"
+            app:layout_constraintStart_toStartOf="parent">
+
+        </androidx.cardview.widget.CardView>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:elevation="5dp"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</FrameLayout>

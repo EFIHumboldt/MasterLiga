@@ -1,0 +1,6 @@
+
+- Verificar que funciona lo de actualizacion obligatoria
+- Verificar que funciona los parametros en detalle equipo
+- Agregar funcionalidad de favoritos
+- Investigar acerca de la creacion de notificaciones
+- Arrancar con el prototipo de la segunda App

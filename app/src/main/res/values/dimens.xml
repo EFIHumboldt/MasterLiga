@@ -1,0 +1,13 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="three_digits_width">25dp</dimen>
+    <dimen name="card_equipo_margin">10dp</dimen>
+    <dimen name="recyler_margin">10dp</dimen>
+    <dimen name="espaciado_entre_fechas">8dp</dimen>
+    <dimen name="espaciado_entre_noticias">5dp</dimen>
+    <dimen name="gradient_radius">0dp</dimen>
+    <dimen name="dimen_minus_100dp">-100dp</dimen>
+
+</resources>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_posiciones">
+
+    <fragment
+        android:id="@+id/navigation_posiciones"
+        android:name="com.efihumboldt.appligas.ui.menu_inferior_torneo.posiciones.PosicionesFragment"
+        android:label="@string/title_posiciones"
+        tools:layout="@layout/fragment_posiciones" />
+
+    <fragment
+        android:id="@+id/navigation_noticias"
+        android:name="com.efihumboldt.appligas.ui.menu_inferior_torneo.noticias.NoticiasFragment"
+        android:label="@string/title_noticias"
+        tools:layout="@layout/fragment_noticias" />
+    <fragment
+        android:id="@+id/navigation_partidos"
+        android:name="com.efihumboldt.appligas.ui.menu_inferior_torneo.partidos.PartidosFragment"
+        android:label="@string/title_partidos"
+        tools:layout="@layout/fragment_partidos" />
+    <fragment
+        android:id="@+id/navigation_equipos"
+        android:name="com.efihumboldt.appligas.ui.menu_inferior_torneo.equipos.EquiposFragment"
+        android:label="@string/title_equipos"
+        tools:layout="@layout/fragment_equipos" />
+    <fragment
+        android:id="@+id/navigation_cruces"
+        android:name="com.efihumboldt.appligas.ui.menu_inferior_torneo.cruces.CrucesFragment"
+        android:label="@string/title_cruces"
+        tools:layout="@layout/fragment_cruces" />
+
+    <fragment
+        android:id="@+id/navigation_config"
+        android:name="com.efihumboldt.appligas.ui.menu_inferior_torneo.config.ConfigFragment"
+        tools:layout="@layout/fragment_config" />
+
+
+
+</navigation>

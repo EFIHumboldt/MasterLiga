@@ -1,0 +1,61 @@
+<!-- res/layout/custom_action_bar_layout.xml -->
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/custom_toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="?attr/colorPrimary">
+
+    <RelativeLayout
+        android:id="@+id/custom_action_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/customActionBarIcon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/escudo_lcf"
+            android:contentDescription="Liga Cordobesa de Futbol"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"/>
+
+        <ImageView
+            android:id="@+id/imgFinal"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="3dp"
+            android:src="@drawable/option"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"/>
+
+        <ImageView
+            android:id="@+id/favs"
+            android:layout_width="30dp"
+            android:layout_height="29dp"
+            android:src="@drawable/favs"
+            android:layout_marginEnd="10dp"
+            android:layout_toLeftOf="@id/imgFinal"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:id="@+id/customActionBarTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/favs"
+            android:layout_toEndOf="@id/customActionBarIcon"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="15dp"
+            android:text="Liga Cordobesa de Futbol"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/montserrat_bold"
+            android:textStyle="bold"
+            android:gravity="center_vertical"
+            android:ellipsize="end"
+            android:textSize="12dp"
+            android:maxLines="2"/>
+
+    </RelativeLayout>
+
+</androidx.appcompat.widget.Toolbar>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center">
+
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/custom_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        >
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_example_ii">
+
+
+            <ImageView
+                android:layout_marginTop="10dp"
+                android:id="@+id/customActionBarIcon"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/escudo_lcf"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/customActionBarTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Liga Cordobesa de Futbol"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="#FFFFFF"
+                style="@style/TamanioLimitadov26"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/customActionBarIcon"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="10dp"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/customActionBarSubtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Primera división"
+                android:textColor="#FFFFFF"
+                android:paddingBottom="10dp"
+                android:fontFamily="@font/montserrat_regular"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/customActionBarTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/barra_inferior_toolbar"
+                android:gravity="center"
+                android:maxLines="1"
+                android:ellipsize="end"
+                style="@style/TamanioLimitadov26"
+                />
+
+            <View
+                android:id="@+id/barra_inferior_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="6dp"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+            </View>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+</LinearLayout>

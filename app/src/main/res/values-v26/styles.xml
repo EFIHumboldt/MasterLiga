@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TamanioLimitadov26" parent="Widget.AppCompat.TextView">
+        <item name="android:autoSizeTextType">uniform</item>
+        <item name="android:autoSizeMinTextSize">12dp</item>
+        <item name="android:autoSizeMaxTextSize">16dp</item>
+    </style>
+
+    <style name="TextViewPosicionTamanioLimitadov26" parent="Widget.AppCompat.TextView">
+        <item name="android:autoSizeTextType">uniform</item>
+        <item name="android:autoSizeMinTextSize">10dp</item>
+        <item name="android:autoSizeMaxTextSize">12dp</item>
+        <item name="android:layout_width">23dp</item>
+
+    </style>
+
+    <style name="TituloTamanioLimitadov26" parent="Widget.AppCompat.TextView">
+        <item name="android:autoSizeTextType">uniform</item>
+        <item name="android:autoSizeMinTextSize">20dp</item>
+        <item name="android:autoSizeMaxTextSize">24dp</item>
+
+    </style>
+
+
+
+</resources>
