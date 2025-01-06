@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/navigation_posiciones"
-        android:name="com.efihumboldt.appligas.ui.menu_inferior_torneo.posiciones.PosicionesFragment"
+        android:name="com.efihumboldt.appligas.ui.menu_inferior_torneo.principal.PrincipalFragment"
         android:label="@string/title_posiciones"
-        tools:layout="@layout/fragment_posiciones" />
+        tools:layout="@layout/fragment_principal" />
 
     <fragment
         android:id="@+id/navigation_noticias"

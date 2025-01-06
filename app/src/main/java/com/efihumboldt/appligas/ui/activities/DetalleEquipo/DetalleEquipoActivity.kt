@@ -109,11 +109,8 @@ class DetalleEquipoActivity : AppCompatActivity() {
 
         if (team != null)
         {
-
-
             tabLayout.setTabTextColors(Color.parseColor("#101010"), Color.parseColor(team.color))
             tabLayout.setSelectedTabIndicatorColor(Color.parseColor(team.color))
-
             setHeaderLayout(team, selectedTournament!!.nombreTorneoDivision)
         }
 
@@ -134,8 +131,10 @@ class DetalleEquipoActivity : AppCompatActivity() {
     private fun setupViewPager(viewPager: ViewPager) {
         val adapter = ViewPagerAdapter(supportFragmentManager)
 
-        adapter.addFragment(Fragment1(), "General")
-        adapter.addFragment(Fragment2(), "Partidos")
+        adapter.addFragment(Fragment3(), "PLANTILLA")
+        adapter.addFragment(Fragment1(), "GENERAL")
+        adapter.addFragment(Fragment2(), "PARTIDOS")
+
         viewPager.adapter = adapter
     }
 

@@ -1,4 +1,4 @@
-package com.efihumboldt.appligas.ui.menu_inferior_torneo.posiciones
+package com.efihumboldt.appligas.ui.menu_inferior_torneo.principal
 
 import android.content.Context
 import android.content.Intent
@@ -22,7 +22,6 @@ import com.efihumboldt.appligas.R
 import com.efihumboldt.appligas.Varios.SharedDataHolder
 import com.efihumboldt.appligas.services.EquipoSimpleService
 import com.efihumboldt.appligas.ui.activities.DetalleEquipo.DetalleEquipoActivity
-import com.efihumboldt.appligas.ui.activities.DetalleTorneo.DetalleTorneoViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

@@ -1,4 +1,4 @@
-package com.efihumboldt.appligas.ui.menu_inferior_torneo.posiciones
+package com.efihumboldt.appligas.ui.menu_inferior_torneo.principal
 
 import android.content.Context
 import android.graphics.Color
