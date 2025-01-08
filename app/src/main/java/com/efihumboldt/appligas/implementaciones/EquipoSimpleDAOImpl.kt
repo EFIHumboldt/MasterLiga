@@ -1,6 +1,7 @@
 package com.efihumboldt.appligas.implementaciones
 
 import android.content.Context
+import android.util.Log
 import android.widget.Toast
 import com.efihumboldt.appligas.entidades.EquipoSimple
 import com.efihumboldt.appligas.interfaces.EquipoSimpleApiService
@@ -8,6 +9,7 @@ import com.efihumboldt.appligas.interfaces.EquipoSimpleDAO
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.io.IOException
+import kotlin.math.log
 
 class EquipoSimpleDAOImpl(private val apiService: EquipoSimpleApiService,
                           private val bd: String?,
@@ -16,10 +18,11 @@ class EquipoSimpleDAOImpl(private val apiService: EquipoSimpleApiService,
 
     override suspend fun getAllTeams(): List<EquipoSimple> {
 
-        /*
         return try {
             withContext(Dispatchers.IO) {
+
                 val response = apiService.getAllTeams(bd, divisionID)
+
                 response.map { apiResponse ->
                     EquipoSimple(
                         id = apiResponse.id,
@@ -35,12 +38,13 @@ class EquipoSimpleDAOImpl(private val apiService: EquipoSimpleApiService,
 
             Toast.makeText(context, "No se pudo conectar con el servidor", Toast.LENGTH_SHORT).show()
             emptyList()
+
         } catch (e: Exception) {
 
             Toast.makeText(context, "Error en la solicitud: ${e.message}", Toast.LENGTH_SHORT).show()
             throw e
         }
-         */
+         /*
         return listOf(
             EquipoSimple(1,"A","Equipo 1","Equipo 1", "0.png", "#000000"),
             EquipoSimple(2,"A","Equipo 2","Equipo 2", "0.png", "#000000"),
@@ -52,7 +56,9 @@ class EquipoSimpleDAOImpl(private val apiService: EquipoSimpleApiService,
             EquipoSimple(8,"B","Equipo 8","Equipo 8", "0.png", "#000000"),
             EquipoSimple(9,"B","Equipo 9","Equipo 9", "0.png", "#000000"),
             EquipoSimple(10,"B","Equipo 10","Equipo 10", "0.png", "#000000"))
+        */
     }
+
 
     override suspend fun getTeamByTeamID(teamID : Int): List<EquipoSimple> {
         return try {

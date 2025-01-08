@@ -18,12 +18,13 @@ class PartidoDAOImpl(private val apiService: PartidoApiService,
 ): PartidoDAO {
 
     override suspend fun getLastMatchsByTeamID(teamID: Int?): List<Partido> {
+        /*
         return listOf( Partido("1","1","2","","","Equipo 1", "Equipo 2","#000000","#000000","3","3",null,null,"01/01/2025","08:00",null,null,null,null,null,null,null,"Finalizado"),
             Partido("1","1","2","","","Equipo 1", "Equipo 2","#000000","#000000","2","3",null,null,"01/01/2025","08:00",null,null,null,null,null,null,null,"Finalizado"),
             Partido("1","1","2","","","Equipo 1", "Equipo 2","#000000","#000000","2","0",null,null,"01/01/2025","08:00",null,null,null,null,null,null,null,"Finalizado"),
             )
 
-        /* CAMBIAR DESPUES
+         */
         return try {
             val response = apiService.getLastMatchsByTeamID(bd, teamID)
 
@@ -63,19 +64,18 @@ class PartidoDAOImpl(private val apiService: PartidoApiService,
             Toast.makeText(context, "Error en la solicitud: ${e.message}", Toast.LENGTH_SHORT).show()
             throw e
         }
-
-         */
     }
 
 
     override suspend fun getMatchsByMatchdayID(matchdayID: Int): List<FechaDeportiva> {
+        /*
         return listOf(FechaDeportiva(0,"Miercoles 01 de Enero","01/01", "03/01",false,
                         listOf( Partido("1","1","2","","","Equipo 1", "Equipo 2","#000000","#000000","3","3",null,null,"01/01/2025","08:00",null,null,null,null,null,null,null,"Finalizado"),
                                 Partido("1","1","2","","","Equipo 1", "Equipo 2","#000000","#000000","2","2",null,null,"01/01/2025","08:00",null,null,null,null,null,null,null,"Finalizado"))),
                     FechaDeportiva(1,"Jueves 02 de Enero","01/01", "03/01",false,
                         listOf( Partido("1","3","4","","","Equipo 3", "Equipo 4","#000000","#000000",null,null,null,null,"01/01/2025","08:00",null,null,null,null,null,null,null,"08:00"),
                                 Partido("1","3","4","","","Equipo 3", "Equipo 4","#000000","#000000",null,null,null,null,"01/01/2025","08:00",null,null,null,null,null,null,null,"08:00"))),)
-        /*
+        */
         return try {
             withContext(Dispatchers.IO) {
                 val response = apiService.getMatchsByMatchdayID(bd, matchdayID)
@@ -86,7 +86,7 @@ class PartidoDAOImpl(private val apiService: PartidoApiService,
                         fechaInicio = "01/01",
                         fechaFin = "03/01",
                         mostrar = false,
-                        /*
+
                         listaPartido = apiResponse.listaPartido.map { partidoResponse ->
                             Partido(
                                 idPartido = partidoResponse.idPartido,
@@ -113,9 +113,7 @@ class PartidoDAOImpl(private val apiService: PartidoApiService,
                                 longitudEstadio = partidoResponse.longitudEstadio,
                                 infoPartido = partidoResponse.infoPartido
                             )
-                        }*/
-                        listaPartido =  listOf(Partido("1","1","2","","","Equipo 1", "Equipo 2","#000000","#000000",null,null,null,null,"01/01/2025","08:00",null,null,null,null,null,null,null,"hola"),
-                            Partido("1","1","2","","","Equipo 1", "Equipo 2","#000000","#000000",null,null,null,null,"01/01/2025","08:00",null,null,null,null,null,null,null,"hola")))
+                        })
                 }
             }
         }catch (e: IOException) {
@@ -127,13 +125,11 @@ class PartidoDAOImpl(private val apiService: PartidoApiService,
             Toast.makeText(context, "Error en la solicitud: ${e.message}", Toast.LENGTH_SHORT).show()
             throw e
         }
-
-         */
     }
 
 
     override suspend fun getStatsGoalsByTeamID(teamID: Int?): StatsGoal {
-
+        /*
         return StatsGoal(1,
             0.5,
             1,
@@ -142,7 +138,7 @@ class PartidoDAOImpl(private val apiService: PartidoApiService,
             0.5,
             1,
             0.5)
-        /*CAMBIAR DESPUES
+        */
         return try {
             withContext(Dispatchers.IO) {
                 val response = apiService.getStatsGoalsByTeamID(bd, teamID)
@@ -166,8 +162,6 @@ class PartidoDAOImpl(private val apiService: PartidoApiService,
             Toast.makeText(context, "Error en la solicitud: ${e.message}", Toast.LENGTH_SHORT).show()
             throw e
         }
-
-         */
     }
 
 
@@ -241,11 +235,12 @@ class PartidoDAOImpl(private val apiService: PartidoApiService,
     }
 
     override suspend fun getAllMatchsByTeamID(matchdayID: Int): List<Partido> {
+        /*
         return listOf( Partido("1","1","2","","","Equipo 1", "Equipo 2","#000000","#000000","3","3",null,null,"01/01/2025","08:00",null,null,null,null,null,null,null,"Finalizado"),
             Partido("1","1","2","","","Equipo 1", "Equipo 2","#000000","#000000","2","3",null,null,"01/01/2025","08:00",null,null,null,null,null,null,null,"Finalizado"),
             Partido("1","1","2","","","Equipo 1", "Equipo 2","#000000","#000000","2","0",null,null,"01/01/2025","08:00",null,null,null,null,null,null,null,"Finalizado"),
         )
-        /*
+         */
         return try {
             withContext(Dispatchers.IO) {
                 val response = apiService.getAllMatchsByTeamID(bd, matchdayID)
@@ -286,7 +281,5 @@ class PartidoDAOImpl(private val apiService: PartidoApiService,
             Toast.makeText(context, "Error en la solicitud: ${e.message}", Toast.LENGTH_SHORT).show()
             emptyList()
         }
-
-         */
     }
 }

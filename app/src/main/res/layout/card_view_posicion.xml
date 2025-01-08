@@ -30,7 +30,7 @@
 
         <TextView
             android:id="@+id/posicion"
-            android:layout_width="15dp"
+            android:layout_width="20sp"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"

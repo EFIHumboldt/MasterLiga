@@ -11,6 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -204,11 +205,10 @@ class EquiposFragment : Fragment() {
                         setInteraccionUsuarioHabilitada(navView, true)
                         swipeRefreshLayout.isRefreshing = false
                     }
-
-
                 }
             } catch (e: HttpException) {
-                //e.printStackTrace()
+
+                e.printStackTrace()
                 e.response()?.code()
                 setInteraccionUsuarioHabilitada(navView, true)
                 swipeRefreshLayout.isRefreshing = false
@@ -231,8 +231,8 @@ class EquiposFragment : Fragment() {
         val apiService: ApiService = ApiServiceImpl(requireContext(), bd)
         val bannerDAO: BannerDAO = BannerDAOImpl(apiService.bannerApiService, bd, selectedTournament!!.divisionID, requireContext())
         val bannerService = BannerService(bannerDAO)
-        bannerList = bannerService.getBanners4ByDivisionID(viewModel.torneoSeleccionado!!.divisionID)
-
+        //CAMBIAR bannerList = bannerService.getBanners4ByDivisionID(viewModel.torneoSeleccionado!!.divisionID)
+        bannerList = emptyList()
         val banner : ImageView = binding.banner4
         if (bannerList.isNotEmpty())
         {

@@ -19,6 +19,7 @@ class PosicionDAOImpl(private val apiService: PosicionApiService,
 
 
     override suspend fun getAllPosicion(): PosicionAndColorResponse {
+        /*
         val lista1 : List<PosicionesPorZona> = listOf(
             PosicionesPorZona("Zona A", listOf(
                 Posicion(1,1,"0.png","Equipo 1",1,1,1,1,1,1,1,1,"#000000"),
@@ -37,7 +38,7 @@ class PosicionDAOImpl(private val apiService: PosicionApiService,
 
         return PosicionAndColorResponse(posicionesPorZona = lista1, coloresDescripcion = emptyList())
 
-        /* CAMBIAR DESPUES
+        */
         return try {
             val resultadoApi = apiService.getAllPosicion(bdName, divisionID)
 
@@ -70,7 +71,7 @@ class PosicionDAOImpl(private val apiService: PosicionApiService,
             Log.e("error", "Excepción desconocida: ${e.message}")
             e.printStackTrace()
             return PosicionAndColorResponse(posicionesPorZona = emptyList(), coloresDescripcion = emptyList())
-        }*/
+        }
 
 
     }

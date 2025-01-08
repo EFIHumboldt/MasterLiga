@@ -32,7 +32,7 @@ class BannerDAOImpl (private val apiService: BannerApiService,
             emptyList()
         } catch (e: HttpException) {
             e.printStackTrace()
-            Log.e("HTTP 500 Error", "Response Body: ${e.response()?.errorBody()?.string()}")
+            Log.e("HTTP 500 Error 1", "Response Body: ${e.response()?.errorBody()?.string()}")
             emptyList()
         }
     }

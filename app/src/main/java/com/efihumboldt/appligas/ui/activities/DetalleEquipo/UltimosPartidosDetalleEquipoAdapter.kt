@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.efihumboldt.appligas.entidades.Partido
@@ -68,7 +69,8 @@ class UltimosPartidosDetalleEquipoAdapter(private val listaPartidos: List<Partid
 
 
         holder.itemView.setOnClickListener {
-            onItemClickListener?.onItemClick(listaPartidos[position])
+            Toast.makeText(context, "No disponible aún", Toast.LENGTH_SHORT).show()
+            //onItemClickListener?.onItemClick(listaPartidos[position])
         }
     }
 

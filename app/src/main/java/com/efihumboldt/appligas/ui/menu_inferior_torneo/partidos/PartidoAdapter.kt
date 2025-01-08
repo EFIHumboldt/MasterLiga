@@ -1,12 +1,14 @@
 package com.efihumboldt.appligas.ui.menu_inferior_torneo.partidos
 
 import android.content.Context
+import android.provider.ContactsContract.CommonDataKinds.Im
 import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.RecyclerView
@@ -67,6 +69,7 @@ class PartidoAdapter(private val listaPartido: List<Partido>, private val bd: St
         var resultadoLocal: TextView = view.findViewById(R.id.tvResultadoLocal)
         var resultadoVisita: TextView = view.findViewById(R.id.tvResultadoVisita)
         var estadoPartido: TextView = view.findViewById(R.id.tvEstadoPartido)
+        var link : ImageView = view.findViewById(R.id.button_youtube)
 
         init {
             // Listener de eventos táctiles para bloquear el desplazamiento vertical
@@ -85,11 +88,15 @@ class PartidoAdapter(private val listaPartido: List<Partido>, private val bd: St
             }
 
             // Listener de clics para manejar los clics en los elementos del RecyclerView secundario
-            itemView.setOnClickListener {
+            link.setOnClickListener {
+                Toast.makeText(context, "REDIRIGIR A YOUTUBE", Toast.LENGTH_SHORT).show()
+                /* CAMBIAR
                 val position = adapterPosition
                 if (position != RecyclerView.NO_POSITION) {
                     onItemClick(listaPartido[position])
                 }
+
+                 */
             }
         }
 

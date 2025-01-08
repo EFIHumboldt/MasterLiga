@@ -131,10 +131,11 @@ class DetalleEquipoActivity : AppCompatActivity() {
     private fun setupViewPager(viewPager: ViewPager) {
         val adapter = ViewPagerAdapter(supportFragmentManager)
 
-        adapter.addFragment(Fragment3(), "PLANTILLA")
         adapter.addFragment(Fragment1(), "GENERAL")
+        adapter.addFragment(Fragment3(), "PLANTILA")
         adapter.addFragment(Fragment2(), "PARTIDOS")
 
+        viewPager.currentItem = 0
         viewPager.adapter = adapter
     }
 

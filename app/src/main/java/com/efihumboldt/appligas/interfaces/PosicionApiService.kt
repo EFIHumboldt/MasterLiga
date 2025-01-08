@@ -7,7 +7,7 @@ import retrofit2.http.Query
 
 interface PosicionApiService {
 
-    @GET("apis/get_all_posicion_updated.php")
+    @GET("apis/get_all_posicion.php")
     suspend fun getAllPosicion(@Query("bd") bd: String, @Query("divisionID") divisionID: Int): PosicionAndColorResponse
 
     @GET("apis/get_all_posicion_clasificacion.php")

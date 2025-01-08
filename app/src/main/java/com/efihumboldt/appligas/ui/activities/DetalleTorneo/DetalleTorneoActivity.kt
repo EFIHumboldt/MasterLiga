@@ -107,8 +107,13 @@ class DetalleTorneoActivity : AppCompatActivity() {
 
         viewModel = ViewModelProvider(this)[DetalleTorneoViewModel::class.java]
 
-        val torneoSeleccionado = intent.getSerializableExtra("torneo") as Torneo
-        val ligaSeleccionada = intent.getSerializableExtra("liga") as Liga
+        //var torneoSeleccionado = intent.getSerializableExtra("torneo") as Torneo
+        //var ligaSeleccionada = intent.getSerializableExtra("liga") as Liga
+
+        //CAMBIAR --> LO HARDCODEO PARA ESTAR DIRECTAMENTE EN LA PANTALLA DE DETALLE TORNEO
+
+        var torneoSeleccionado = Torneo(1, 1, 1, "Torneo Hardcodeado", "null", "#000000")
+        var ligaSeleccionada = Liga(1, "Liga Hardcodeada","null", "null", "null", "null", "#0000")
 
         //PARA LOS FRAGMENTS
         torneoSeleccionado.let { viewModel.torneoSeleccionado = it }

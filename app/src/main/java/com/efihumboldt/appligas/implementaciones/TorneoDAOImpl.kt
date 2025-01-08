@@ -73,7 +73,7 @@ class TorneoDAOImpl(private val apiService: TorneoApiService,
         return listOf(
             Torneo(
                 torneoID = 1,
-                divisionID = 101,
+                divisionID = 1,
                 nombreTorneoDivision = "Torneo Default 1",
                 imgTorneo = 0,
                 reglamento = "Reglamento del Torneo 1",
@@ -81,7 +81,7 @@ class TorneoDAOImpl(private val apiService: TorneoApiService,
             ),
             Torneo(
                 torneoID = 2,
-                divisionID = 102,
+                divisionID = 2,
                 nombreTorneoDivision = "Torneo Default 2",
                 imgTorneo = 0,
                 reglamento = "Reglamento del Torneo 2",
@@ -96,16 +96,16 @@ class TorneoDAOImpl(private val apiService: TorneoApiService,
             listOf(
                 Torneo(
                     torneoID = 1,
-                    divisionID = 201,
-                    nombreTorneoDivision = "Torneo Liga 1",
+                    divisionID = 3,
+                    nombreTorneoDivision = "Torneo Liga 3",
                     imgTorneo = 0,
                     reglamento = "Reglamento Liga 1",
                     color = "#0000FF"
                 ),
                 Torneo(
                     torneoID = 2,
-                    divisionID = 202,
-                    nombreTorneoDivision = "Torneo Liga 1 División 2",
+                    divisionID = 4,
+                    nombreTorneoDivision = "Torneo Liga 1 División 4",
                     imgTorneo = 0,
                     reglamento = "Reglamento Liga 1 División 2",
                     color = "#FFFF00"
