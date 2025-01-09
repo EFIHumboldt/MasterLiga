@@ -21,5 +21,5 @@ interface BannerApiService {
     @GET("apis/banners/get_banner_7.php")
     suspend fun getBanners7ByDivisionID(@Query("bd") bd: String?, @Query("divisionID") divisionID: Int?): List<Banner>
     @GET("apis/banners/get_banner_8.php")
-    suspend fun getBanners8ByDivisionID(@Query("bd") bd: String?, @Query("divisionID") divisionID: Int?): List<Banner>
+    suspend fun getBanners8ByDivisionID(@Query("bd") bd: String?, @Query("divisionID") divisionID: Int?, @Query("teamID")  teamID : Int): List<Banner>
 }

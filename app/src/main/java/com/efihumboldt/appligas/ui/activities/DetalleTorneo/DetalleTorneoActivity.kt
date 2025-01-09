@@ -113,7 +113,7 @@ class DetalleTorneoActivity : AppCompatActivity() {
         //CAMBIAR --> LO HARDCODEO PARA ESTAR DIRECTAMENTE EN LA PANTALLA DE DETALLE TORNEO
 
         var torneoSeleccionado = Torneo(1, 1, 1, "Torneo Hardcodeado", "null", "#000000")
-        var ligaSeleccionada = Liga(1, "Liga Hardcodeada","null", "null", "null", "null", "#0000")
+        var ligaSeleccionada = Liga(1, "Liga Hardcodeada","http://192.168.56.1", "null", "null", "null", "#0000")
 
         //PARA LOS FRAGMENTS
         torneoSeleccionado.let { viewModel.torneoSeleccionado = it }

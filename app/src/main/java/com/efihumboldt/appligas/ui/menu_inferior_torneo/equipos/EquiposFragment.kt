@@ -231,8 +231,8 @@ class EquiposFragment : Fragment() {
         val apiService: ApiService = ApiServiceImpl(requireContext(), bd)
         val bannerDAO: BannerDAO = BannerDAOImpl(apiService.bannerApiService, bd, selectedTournament!!.divisionID, requireContext())
         val bannerService = BannerService(bannerDAO)
-        //CAMBIAR bannerList = bannerService.getBanners4ByDivisionID(viewModel.torneoSeleccionado!!.divisionID)
-        bannerList = emptyList()
+        bannerList = bannerService.getBanners4ByDivisionID(viewModel.torneoSeleccionado!!.divisionID)
+
         val banner : ImageView = binding.banner4
         if (bannerList.isNotEmpty())
         {

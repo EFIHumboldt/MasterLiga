@@ -157,7 +157,23 @@ class BannerDAOImpl (private val apiService: BannerApiService,
         }
     }
 
-    override suspend fun getBanners8ByDivisionID(divisionID: Int?): List<Banner> {
-        TODO("Not yet implemented")
+    override suspend fun getBanners8ByDivisionID(divisionID: Int?, teamID: Int): List<Banner> {
+        return try {
+            withContext(Dispatchers.IO) {
+                val response = apiService.getBanners8ByDivisionID(bd, divisionID, teamID)
+                response.map { apiResponse ->
+                    Banner(
+                        link = apiResponse.link
+                    )
+                }
+            }
+        } catch (e: IOException) {
+            Toast.makeText(context, "No se pudo conectar con el servidor", Toast.LENGTH_SHORT).show()
+            emptyList()
+        } catch (e: HttpException) {
+            e.printStackTrace()
+            Log.e("HTTP 500 Error", "Response Body: ${e.response()?.errorBody()?.string()}")
+            emptyList()
+        }
     }
 }

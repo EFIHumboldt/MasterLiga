@@ -15,7 +15,6 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.bumptech.glide.Glide
 import com.efihumboldt.appligas.R
 import com.efihumboldt.appligas.Varios.SharedDataHolder
-import com.efihumboldt.appligas.databinding.ActivityDetalleEquipoBinding
 import com.efihumboldt.appligas.databinding.Fragment1Binding
 import com.efihumboldt.appligas.entidades.Banner
 import com.efihumboldt.appligas.entidades.Partido
@@ -113,6 +112,10 @@ class Fragment1 : Fragment() {
                 binding.frameTablaPosiciones.progressBar.visibility = View.VISIBLE
                 binding.frameUltimosPartidos.progressBar.visibility = View.VISIBLE
                 binding.framePlantel.progressBar.visibility = View.VISIBLE
+                binding.framePlantel.cabeceraTabla.yellowCard.visibility = View.GONE
+                binding.framePlantel.cabeceraTabla.ball.visibility = View.GONE
+                Glide.with(requireContext()).load(R.drawable.football_ball).into(binding.framePlantel.cabeceraTabla.redCard)
+
 
                 cargarBanner(bd)
                 cargarDatosTabla(posicionService, team.id, team.zona, 0)
@@ -187,9 +190,9 @@ class Fragment1 : Fragment() {
 
     private suspend fun cargarDatosPlantel(jugadorService: JugadorService, id: Int) {
         try {
-            val listaJugadores = jugadorService.getJugadoresByTeamID(id)
+            val listaJugadores = jugadorService.getGoleadoresByTeamID(id)
             withContext(Dispatchers.Main) {
-                val jugadoresAdapter = PlantelAdapter(listaJugadores, SharedDataHolder.bd, id, requireContext())
+                val jugadoresAdapter = GoleadoresAdapter(listaJugadores, SharedDataHolder.bd, id, requireContext())
                 val layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
                 recyclerViewPlantel.layoutManager = layoutManager
                 recyclerViewPlantel.adapter = jugadoresAdapter

@@ -4,19 +4,24 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import com.bumptech.glide.Glide
 import com.efihumboldt.appligas.Varios.SharedDataHolder
 import com.efihumboldt.appligas.databinding.Fragment1Binding
 import com.efihumboldt.appligas.databinding.Fragment2Binding
 import com.efihumboldt.appligas.entidades.Banner
 import com.efihumboldt.appligas.implementaciones.ApiServiceImpl
+import com.efihumboldt.appligas.implementaciones.BannerDAOImpl
 import com.efihumboldt.appligas.implementaciones.PartidoDAOImpl
 import com.efihumboldt.appligas.interfaces.ApiService
+import com.efihumboldt.appligas.interfaces.BannerDAO
 import com.efihumboldt.appligas.interfaces.PartidoDAO
+import com.efihumboldt.appligas.services.BannerService
 import com.efihumboldt.appligas.services.PartidoService
 import com.efihumboldt.appligas.ui.activities.DetalleTorneo.DetalleTorneoViewModel
 import kotlinx.coroutines.CancellationException
@@ -30,6 +35,7 @@ class Fragment2 : Fragment() {
     private lateinit var viewModel: DetalleEquipoViewModel
     private lateinit var viewModelTorneo: DetalleTorneoViewModel
     private lateinit var binding: Fragment2Binding
+    private lateinit var bannerList: List<Banner>
 
     private lateinit var recyclerViewPartidosEquipo: RecyclerView
     private lateinit var swipeRefreshLayoutActivityEquipo: SwipeRefreshLayout
@@ -67,6 +73,18 @@ class Fragment2 : Fragment() {
         val partidoService = PartidoService(partidoDAO)
 
         CoroutineScope(Dispatchers.Main).launch {
+            try {
+                if (!isDetached) {
+                    cargarBanner(bd)
+                }
+            }
+            catch (_ : CancellationException)
+            {
+
+            }
+        }
+
+        CoroutineScope(Dispatchers.Main).launch {
 
             try {
 
@@ -76,6 +94,11 @@ class Fragment2 : Fragment() {
                     val partidoAdapter = PartidosEquipoAdapter(matchList, SharedDataHolder.bd)
                     recyclerViewPartidosEquipo.layoutManager = LinearLayoutManager(requireContext())
                     recyclerViewPartidosEquipo.adapter = partidoAdapter
+                    val banner : ImageView = binding.banner8
+                    if (bannerList.isNotEmpty())
+                    {
+                        Glide.with(banner.context).load("${bd}/${bannerList[0].link}").into(banner)
+                    }
                 }
 
             } catch (_ : CancellationException)
@@ -84,13 +107,14 @@ class Fragment2 : Fragment() {
             }
         }
 
+
+
         swipeRefreshLayoutActivityEquipo.setOnRefreshListener {
 
             cargaDatosJob?.cancel()
 
 
             cargaDatosJob = CoroutineScope(Dispatchers.Main).launch {
-
                 try {
 
                     if (!isDetached)
@@ -100,6 +124,7 @@ class Fragment2 : Fragment() {
                         recyclerViewPartidosEquipo.layoutManager = LinearLayoutManager(requireContext())
                         recyclerViewPartidosEquipo.adapter = partidoAdapter
                         swipeRefreshLayoutActivityEquipo.isRefreshing = false
+
                     }
 
                 } catch (e : CancellationException)
@@ -109,6 +134,16 @@ class Fragment2 : Fragment() {
 
             }
         }
+    }
+
+    private suspend fun cargarBanner(bd : String?){
+
+        val apiService: ApiService = ApiServiceImpl(requireContext(), bd)
+        val bannerDAO: BannerDAO = BannerDAOImpl(apiService.bannerApiService, bd, SharedDataHolder.selectedTournament!!.divisionID, requireContext())
+        val bannerService = BannerService(bannerDAO)
+        bannerList = bannerService.getBanners8ByDivisionID(SharedDataHolder.selectedTournament!!.divisionID, viewModel.selectedTeam!!.id)
+
+
     }
 
 }

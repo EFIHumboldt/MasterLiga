@@ -12,6 +12,7 @@ import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.efihumboldt.appligas.R
+import com.efihumboldt.appligas.entidades.Banner
 import com.efihumboldt.appligas.entidades.Partido
 import java.util.Calendar
 
@@ -20,7 +21,7 @@ class PartidosEquipoAdapter(private val listaPartido: List<Partido>,
 
 
     val horaActual = Calendar.getInstance().time
-
+    var usados = 0
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PartidoViewHolder {
         val itemView =
@@ -66,7 +67,6 @@ class PartidosEquipoAdapter(private val listaPartido: List<Partido>,
         var resultadoLocal: TextView = view.findViewById(R.id.tvResultadoLocal)
         var resultadoVisita: TextView = view.findViewById(R.id.tvResultadoVisita)
         var estadoPartido: TextView = view.findViewById(R.id.tvEstadoPartido)
-
 
     }
 }

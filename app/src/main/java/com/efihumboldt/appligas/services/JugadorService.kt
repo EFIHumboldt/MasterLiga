@@ -10,4 +10,8 @@ class JugadorService(private val jugadorDAO: JugadorDAO) {
     suspend fun getJugadoresByTeamID(teamID: Int): List<Jugador> {
         return jugadorDAO.getJugadoresByTeamID(teamID)
     }
+
+    suspend fun getGoleadoresByTeamID(teamID: Int) : List<Jugador> {
+        return jugadorDAO.getGoleadoresByTeamID(teamID)
+    }
 }

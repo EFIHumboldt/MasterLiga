@@ -10,4 +10,7 @@ import retrofit2.http.Query
 interface JugadorApiService {
     @GET("/apis/get_jugadores_by_team_id.php")
     suspend fun getJugadoresByTeamID(@Query("bd") bd: String?, @Query("teamID") teamID: Int?): List<Jugador>
+
+    @GET("/apis/get_goleadores_by_team_id.php")
+    suspend fun getGoleadoresByTeamID(@Query("bd") bd: String?, @Query("teamID") teamID: Int?): List<Jugador>
 }

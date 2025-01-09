@@ -26,7 +26,7 @@ class BannerService(private val bannerDAO : BannerDAO) {
     suspend fun getBanners7ByDivisionID(divisionID : Int?): List<Banner> {
         return bannerDAO.getBanners7ByDivisionID(divisionID)
     }
-    suspend fun getBanners8ByDivisionID(divisionID : Int?): List<Banner> {
-        return bannerDAO.getBanners8ByDivisionID(divisionID)
+    suspend fun getBanners8ByDivisionID(divisionID : Int?, teamID : Int): List<Banner> {
+        return bannerDAO.getBanners8ByDivisionID(divisionID, teamID)
     }
 }

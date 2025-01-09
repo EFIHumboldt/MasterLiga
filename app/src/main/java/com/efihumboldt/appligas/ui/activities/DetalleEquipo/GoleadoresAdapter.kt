@@ -11,14 +11,14 @@ import com.bumptech.glide.Glide
 import com.efihumboldt.appligas.R
 import com.efihumboldt.appligas.entidades.Jugador
 
-class PlantelAdapter(private val listaJugadores: List<Jugador>,
+class GoleadoresAdapter(private val listaJugadores: List<Jugador>,
                         private val bd: String?,
                         private val teamID: Int?,
                         private val context: Context
-) : RecyclerView.Adapter<PlantelAdapter.JugadorViewHolder>() {
+) : RecyclerView.Adapter<GoleadoresAdapter.JugadorViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): JugadorViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.card_view_jugador_plantilla, parent, false)
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.card_view_jugador_goles, parent, false)
         return JugadorViewHolder(itemView)
     }
 
@@ -28,8 +28,6 @@ class PlantelAdapter(private val listaJugadores: List<Jugador>,
         holder.tvDorsal.text = posicion.dorsal
         holder.tvNombre.text = posicion.nombreCompleto
         holder.tvGoles.text = posicion.goles.toString()
-        holder.tvTarjetasAmarillas.text = posicion.tarjetasAmarillas.toString()
-        holder.tvTarjetasRojas.text = posicion.tarjetasRojas.toString()
 
         Glide.with(holder.escudoEquipo.context).load(R.drawable.default_profile).into(holder.escudoEquipo)
 
@@ -59,7 +57,5 @@ class PlantelAdapter(private val listaJugadores: List<Jugador>,
         var tvNombre : TextView = view.findViewById(R.id.item_nombre)
         var escudoEquipo: ImageView = view.findViewById(R.id.imgJugador)
         var tvGoles : TextView = view.findViewById(R.id.item_goles)
-        var tvTarjetasAmarillas : TextView = view.findViewById(R.id.item_tarjetas_amarillas)
-        var tvTarjetasRojas : TextView = view.findViewById(R.id.item_tarjetas_rojas)
     }
 }

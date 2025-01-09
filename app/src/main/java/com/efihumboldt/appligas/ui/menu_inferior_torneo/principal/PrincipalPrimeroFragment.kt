@@ -133,7 +133,6 @@ class PrincipalPrimeroFragment : Fragment() {
                 }
             }
         }
-
         return binding.root
     }
 
