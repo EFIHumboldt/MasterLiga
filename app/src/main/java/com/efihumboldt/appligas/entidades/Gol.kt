@@ -1,7 +1,9 @@
 package com.efihumboldt.appligas.entidades
 
 data class Gol(
-    var minuto : Int,
+    var id : Int,
+    var minuto : Int?,
     var lado : String,
-    var tiempo : Int
+    var tiempo : Int?,
+    var jugador : String?
 )

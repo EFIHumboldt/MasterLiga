@@ -25,7 +25,7 @@ class PartidosEquipoAdapter(private val listaPartido: List<Partido>,
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PartidoViewHolder {
         val itemView =
-            LayoutInflater.from(parent.context).inflate(R.layout.card_view_partido_equipo, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.card_view_partido_equipo_ii, parent, false) //CAMBIAR por las dudas antes estaba una que decia card_view_partido_equipo
         return PartidoViewHolder(itemView)
     }
 
@@ -52,6 +52,34 @@ class PartidosEquipoAdapter(private val listaPartido: List<Partido>,
                 setTextColor(ContextCompat.getColor(context, R.color.verdeMatch))
             }
         }
+        if ((posicion.resultadoLocal == "0" && posicion.resultadoVisita == "0") || (posicion.resultadoLocal == null && posicion.resultadoVisita == null)) //es porque empataron sin goles
+        {
+            holder.localBall.visibility = View.INVISIBLE
+            holder.visitBall.visibility = View.INVISIBLE
+        }
+        else if (posicion.goles.size > 0){
+            for (i in posicion.goles.indices) {
+                if (posicion.goles[i].lado == "L") {
+
+                    var textoActual = holder.localGoals.text.toString()
+
+                    if (textoActual == "") {
+                        holder.localGoals.text = "${posicion.goles[i].jugador}"
+                    }else {
+                        holder.localGoals.text = "${textoActual}, ${posicion.goles[i].jugador}"
+                    }
+                }
+                else {
+                    var textoActual = holder.visitGoals.text.toString()
+
+                    if (textoActual == "") {
+                        holder.localGoals.text = "${posicion.goles[i].jugador}"
+                    }else {
+                        holder.localGoals.text = "${textoActual}, ${posicion.goles[i].jugador}"
+                    }
+                }
+            }
+        }
     }
 
     override fun getItemCount(): Int {
@@ -67,6 +95,10 @@ class PartidosEquipoAdapter(private val listaPartido: List<Partido>,
         var resultadoLocal: TextView = view.findViewById(R.id.tvResultadoLocal)
         var resultadoVisita: TextView = view.findViewById(R.id.tvResultadoVisita)
         var estadoPartido: TextView = view.findViewById(R.id.tvEstadoPartido)
+        var localBall : ImageView = view.findViewById(R.id.left_ball)
+        var localGoals : TextView = view.findViewById(R.id.left_goals)
+        var visitBall : ImageView = view.findViewById(R.id.right_ball)
+        var visitGoals : TextView = view.findViewById(R.id.right_goals)
 
     }
 }

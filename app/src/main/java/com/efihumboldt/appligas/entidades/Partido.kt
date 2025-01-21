@@ -1,5 +1,7 @@
 package com.efihumboldt.appligas.entidades
 
+import com.bumptech.glide.Glide
+
 data class Partido(
     //No se si van las fotos
     val idPartido: String,
@@ -24,5 +26,6 @@ data class Partido(
     val estadioPartido : String?,
     val latitudEstadio : String?,
     val longitudEstadio : String?,
-    val infoPartido : String
+    val infoPartido : String,
+    val goles : List<Gol>
 )

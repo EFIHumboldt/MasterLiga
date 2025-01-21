@@ -52,7 +52,8 @@ class PartidoDAOImpl(private val apiService: PartidoApiService,
                     estadioPartido = apiResponse.estadioPartido,
                     latitudEstadio = apiResponse.latitudEstadio,
                     longitudEstadio = apiResponse.longitudEstadio,
-                    infoPartido = apiResponse.infoPartido
+                    infoPartido = apiResponse.infoPartido,
+                    goles = emptyList()
                 )
             }
         } catch (e: IOException) {
@@ -111,7 +112,15 @@ class PartidoDAOImpl(private val apiService: PartidoApiService,
                                 estadioPartido = partidoResponse.estadioPartido,
                                 latitudEstadio = partidoResponse.latitudEstadio,
                                 longitudEstadio = partidoResponse.longitudEstadio,
-                                infoPartido = partidoResponse.infoPartido
+                                infoPartido = partidoResponse.infoPartido,
+                                goles = partidoResponse.goles.map { golResponse ->
+                                    Gol(
+                                        id = golResponse.id,
+                                        minuto = golResponse.minuto,
+                                        lado  = golResponse.lado,
+                                        tiempo = golResponse.tiempo,
+                                        jugador = golResponse.jugador,
+                                    )}
                             )
                         })
                 }
@@ -171,9 +180,11 @@ class PartidoDAOImpl(private val apiService: PartidoApiService,
                 val response = apiService.getGoalsByMatchID(bd, matchID)
                 response.map { apiResponse ->
                     Gol(
+                        id = apiResponse.id,
                         minuto = apiResponse.minuto,
                         lado  = apiResponse.lado,
-                        tiempo = apiResponse.tiempo
+                        tiempo = apiResponse.tiempo,
+                        jugador = apiResponse.jugador
                     )
                 }
             }
@@ -220,7 +231,8 @@ class PartidoDAOImpl(private val apiService: PartidoApiService,
                     estadioPartido = response.estadioPartido,
                     latitudEstadio = response.latitudEstadio,
                     longitudEstadio = response.longitudEstadio,
-                    infoPartido = response.infoPartido
+                    infoPartido = response.infoPartido,
+                    goles = emptyList()
                 )
             }
         }catch (e: IOException) {
@@ -268,7 +280,15 @@ class PartidoDAOImpl(private val apiService: PartidoApiService,
                         estadioPartido = apiResponse.estadioPartido,
                         latitudEstadio = apiResponse.latitudEstadio,
                         longitudEstadio = apiResponse.longitudEstadio,
-                        infoPartido = apiResponse.infoPartido
+                        infoPartido = apiResponse.infoPartido,
+                        goles = apiResponse.goles.map { golResponse ->
+                            Gol(
+                                id = golResponse.id,
+                                minuto = golResponse.minuto,
+                                lado  = golResponse.lado,
+                                tiempo = golResponse.tiempo,
+                                jugador = golResponse.jugador
+                            )}
                     )
                 }
             }
